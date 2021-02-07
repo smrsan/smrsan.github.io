@@ -11,12 +11,14 @@ class Term {
   private _isAtNewLine: boolean = true;
 
   private readonly _termClassName: string = "term";
+  private readonly _charClassName: string = "term-char";
   private readonly _cursorClassName: string = "term-cursor";
+  private readonly _newLineClassName: string = "term-newline";
 
   constructor(rootId: string) {
     this._$root = $(`#${rootId}`);
     this._$term = this._buildTermElem();
-    this._$eofChar = this._buildEofChar();
+    this._$eofChar = this._buildEofElem();
     this._$cursor = this._$eofChar;
 
     this._$term.append(this._$cursor);
@@ -27,11 +29,11 @@ class Term {
     return $(`<div>`).addClass(this._termClassName);
   }
 
-  private _buildEofChar(): JQuery {
+  private _buildEofElem(): JQuery {
     return $(`<span>&nbsp</span>`).addClass(this._cursorClassName);
   }
 
-  private _createCharElem(char: string): JQuery {
+  private _buildCharElem(char: string): JQuery {
     let escapedChar: string;
 
     this._isAtNewLine = false;
@@ -48,12 +50,19 @@ class Term {
         );
     }
 
-    const $char = $(`<span>${escapedChar}</span>`);
+    const $char = $(`<span>${escapedChar}</span>`).addClass(
+      this._charClassName
+    );
+
+    if (this._isAtNewLine) {
+      $char.addClass(this._newLineClassName);
+    }
+
     return $char;
   }
 
   private _appendChar(char: string) {
-    const $char = this._createCharElem(char);
+    const $char = this._buildCharElem(char);
     this._$cursor.before($char);
     this._charsCount += 1;
     this._cursorIndex += 1;
