@@ -4,3 +4,5 @@ import { ROOT_ID } from "./constants";
 import Term from "./Term";
 
 const term = new Term(ROOT_ID);
+
+term.log("Hello World");
