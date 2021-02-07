@@ -1,3 +1,5 @@
+$lineHeight: 20px;
+
 .term {
   display: block;
   width: 100vw;
@@ -8,11 +10,21 @@
   background-color: black;
   font-family: "Ubuntu Mono", monospace;
   font-size: 16pt;
-  line-height: 16px;
+  line-height: $lineHeight;
   overflow-x: hidden;
   overflow-y: scroll;
   word-wrap: break-word;
   word-break: break-all;
+}
+
+.term > span {
+  display: inline-block;
+  margin-bottom: 1.5px;
+  height: $lineHeight;
+}
+
+.term > span.term-newline {
+  display: inline;
 }
 
 .term-cursor {
