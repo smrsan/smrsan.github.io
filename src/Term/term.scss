@@ -1,0 +1,16 @@
+.term {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 5px;
+  color: lightgreen;
+  background-color: black;
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 16pt;
+  line-height: 16px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  word-wrap: break-word;
+  word-break: break-all;
+}

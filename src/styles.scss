@@ -1,0 +1,20 @@
+html {
+  -webkit-font-smoothing: antialiased; // Antialiasing.
+  -mozosx-font-smoothing: grayscale; // Antialiasing.
+  // Change from `box-sizing: content-box` so that `width`
+  // is not affected by `padding` or `border`.
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  &::backdrop {
+    background-color: white;
+  }
+}
