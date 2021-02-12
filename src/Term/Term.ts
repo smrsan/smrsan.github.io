@@ -1,19 +1,27 @@
 import $ from "jquery";
 import { encode as encodeHtml } from "html-entities";
 
+// Helpers
+import wait from "../helpers/wait";
+import formatStr from "../helpers/formatStr";
+
 class Term {
   private _$root: JQuery<HTMLDivElement | HTMLElement>;
   private _$term: JQuery<HTMLDivElement | HTMLElement>;
   private _$eofChar: JQuery<HTMLSpanElement | HTMLElement>;
   private _$cursor: JQuery<HTMLSpanElement | HTMLElement>;
+
   private _cursorIndex: number = 0;
   private _charsCount: number = 0;
+
   private _isAtNewLine: boolean = true;
 
   private readonly _termClassName: string = "term";
   private readonly _charClassName: string = "term-char";
   private readonly _cursorClassName: string = "term-cursor";
   private readonly _newLineClassName: string = "term-newline";
+
+  private readonly _logQueue: Function[] = [];
 
   constructor(rootId: string) {
     this._$root = $(`#${rootId}`);
@@ -88,9 +96,50 @@ class Term {
   }
 
   public log(...strs: string[]) {
-    for (const str of strs) {
-      for (const char of str) {
-        this._appendChar(char);
+    if (!this._logQueue.length) {
+      this._log(...strs);
+      return;
+    }
+    this._logQueue.unshift(() => {
+      this._log(...strs);
+      const nextLog = this._logQueue.pop();
+      if (nextLog) nextLog();
+    });
+  }
+
+  private _log(...strs: string[]) {
+    const str: string = formatStr(...strs);
+
+    if (!str.length) return;
+
+    for (const char of str) {
+      this._appendChar(char);
+    }
+  }
+
+  public async type(...strs: string[]): Promise<void> {
+    return new Promise((resolve) => {
+      this._logQueue.unshift(async () => {
+        await this._type(...strs);
+        resolve();
+        this._logQueue.pop();
+        const nextLog = this._logQueue.pop();
+        if (nextLog) nextLog();
+      });
+      if (this._logQueue.length > 1) return;
+      this._logQueue[0]();
+    });
+  }
+
+  private async _type(...strs: string[]): Promise<void> {
+    const str: string = formatStr(...strs);
+
+    if (!str.length) return;
+
+    for (let i = 0; i < str.length; i++) {
+      this._appendChar(str[i]);
+      if (i < str.length - 1) {
+        await wait(Math.random() * 150 + 50);
       }
     }
   }
