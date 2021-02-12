@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "html-entities": "^2.1.0",
-    "jquery": "^3.5.1"
+    "jquery": "^3.5.1",
+    "util": "^0.12.3"
   }
 }
