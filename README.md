@@ -1,2 +1,2 @@
 # smrsan.github.io
-:octocat: My Static Page on Github
+:octocat: For more info, see my [GitHub profile page](https://github.com/smrsan).
