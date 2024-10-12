@@ -101,7 +101,7 @@ const Hero = () => {
     }, []);
 
     return (
-        <div
+        <section
             id="hero"
             className="screen-fit-size relative overflow-hidden flex justify-center items-center flex-col gap-8"
             style={{
@@ -144,7 +144,7 @@ const Hero = () => {
                     className="relative block w-full h-1 bg-white rounded-full"
                 />
             </div>
-        </div>
+        </section>
     );
 };
 
