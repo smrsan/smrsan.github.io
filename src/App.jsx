@@ -1,10 +1,16 @@
+import { ScrollTrigger } from "gsap/all";
+import gsap from "gsap";
+import Hero from "./components/Hero";
+
+gsap.registerPlugin(ScrollTrigger);
+
 function App() {
-  return (
-    <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </>
-  );
+    return (
+        <>
+            <Hero />
+            <div className="screen-fit-size"></div>
+        </>
+    );
 }
 
 export default App;
-
