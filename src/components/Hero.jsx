@@ -114,6 +114,11 @@ const Hero = () => {
                 id="hero-bg-fader"
                 className="bg-n-8 w-full h-full pointer-events-none absolute opacity-0"
             />
+
+            <h1 id="hero-name" className="text-[3rem] font-semibold opacity-1">
+                My Name is <u>Reza</u>
+            </h1>
+
             <h3
                 id="welcome-text"
                 className="text-[2rem] bg-white/30 backdrop-blur-md border border-white/30 rounded-full p-6 overflow-hidden"
@@ -127,13 +132,13 @@ const Hero = () => {
                 id="my-page-name-container"
                 className="flex flex-col gap-8 justify-start"
             >
-                <h1
+                <h2
                     ref={myPageNameRef}
                     id="my-page-name"
                     className="text-[4rem] opacity-0 font-bold block relative text-color-2"
                 >
                     Portfolio
-                </h1>
+                </h2>
                 <div
                     id="my-page-name-line"
                     className="relative block w-full h-1 bg-white rounded-full"
