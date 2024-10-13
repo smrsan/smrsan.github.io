@@ -92,12 +92,19 @@ const Hero = () => {
         <section
             id="hero"
             className="screen-fit-size relative overflow-hidden flex justify-center items-center flex-col gap-8"
-            style={{
-                backgroundSize: "cover",
-                backgroundImage: `url("${myPhoto}")`,
-                backgroundPositionX: "center",
-            }}
         >
+            <img
+                id="hero-img"
+                alt="My Photo"
+                src={myPhoto}
+                className="
+                    max-sm:min-h-full
+                    max-sm:max-w-[200vw]
+                    min-w-full
+                    absolute
+                    -z-10
+                "
+            />
             <div
                 id="hero-bg-fader"
                 className="bg-n-8 w-full h-full pointer-events-none absolute opacity-0"
