@@ -8,18 +8,6 @@ const Hero = () => {
     const myPageNameRef = useRef();
 
     useGSAP(() => {
-        // Hand
-        gsap.timeline({
-            repeat: -1,
-            repeatDelay: 2,
-        }).to("#hand-point-down", {
-            y: 8,
-            repeat: 3,
-            yoyo: true,
-            duration: 0.2,
-            ease: "power1.inOut",
-        });
-
         // Line
         gsap.timeline({ repeat: -1, repeatDelay: 4.2 })
             .to("#my-page-name-line", {
@@ -32,7 +20,7 @@ const Hero = () => {
             });
 
         // "Welcome" text on Scroll Aniamtion
-        gsap.to("#welcome-text", {
+        gsap.to("#welcome-container", {
             x: -200,
             opacity: 0,
             ease: "circ.inOut",
@@ -45,7 +33,7 @@ const Hero = () => {
         });
 
         // "Page Name" text on Scroll Aniamtion
-        gsap.to("#my-page-name-container", {
+        gsap.to("#hero-name", {
             x: 200,
             opacity: 0,
             ease: "circ.inOut",
@@ -115,35 +103,70 @@ const Hero = () => {
                 className="bg-n-8 w-full h-full pointer-events-none absolute opacity-0"
             />
 
-            <h1 id="hero-name" className="text-[3rem] font-semibold opacity-1">
+            <h1
+                id="hero-name"
+                className="
+                    max-md:text-[10vw]
+                    max-md:h-[15vw]
+                    text-[5rem]
+                    h-[6.5rem]
+                    font-bold
+                    italic
+                    bg-clip-text
+                    fill-transparent
+                    inline-block
+                    content-center
+                "
+                style={{
+                    backgroundImage:
+                        "linear-gradient(90deg, #fcff9e 0%, #c67700 100%)",
+                    // WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                }}
+            >
                 My Name is <u>Reza</u>
             </h1>
 
             <h3
-                id="welcome-text"
-                className="text-[2rem] bg-white/30 backdrop-blur-md border border-white/30 rounded-full p-6 overflow-hidden"
+                id="welcome-container"
+                className="
+                    text-[2rem]
+                    bg-white/30
+                    backdrop-blur-md
+                    border
+                    border-white/30
+                    rounded-full
+                    max-sm:px-4
+                    max-sm:pb-3
+                    max-sm:pt-4
+                    px-7
+                    pb-6
+                    pt-7
+                    overflow-hidden
+                    flex
+                    items-center
+                    gap-5
+                "
+                style={{
+                    transition: "width 0.5s ease, height 0.5s ease !important",
+                }}
             >
-                Welcome to my{" "}
-                <span id="hand-point-down" className="inline-block">
-                    👇🏻
-                </span>
+                <span>Welcome to my</span>
+
+                <div className="inline-flex flex-col gap-6 max-sm:gap-3">
+                    <h2
+                        ref={myPageNameRef}
+                        id="my-page-name"
+                        className="text-[4rem] max-sm:text-[2.5rem] opacity-0 font-bold block relative text-color-2"
+                    >
+                        Portfolio
+                    </h2>
+                    <div
+                        id="my-page-name-line"
+                        className="relative block w-full h-1 bg-white rounded-full"
+                    />
+                </div>
             </h3>
-            <div
-                id="my-page-name-container"
-                className="flex flex-col gap-8 justify-start"
-            >
-                <h2
-                    ref={myPageNameRef}
-                    id="my-page-name"
-                    className="text-[4rem] opacity-0 font-bold block relative text-color-2"
-                >
-                    Portfolio
-                </h2>
-                <div
-                    id="my-page-name-line"
-                    className="relative block w-full h-1 bg-white rounded-full"
-                />
-            </div>
         </section>
     );
 };
