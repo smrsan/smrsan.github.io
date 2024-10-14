@@ -1,10 +1,11 @@
+import Experience from "./components/Experience";
 import Hero from "./components/Hero";
 
 function App() {
     return (
         <>
             <Hero />
-            <div className="screen-fit-size"></div>
+            <Experience />
         </>
     );
 }
