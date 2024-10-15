@@ -28,7 +28,14 @@
         @apply font-sans bg-n-8 text-n-1 text-base overflow-x-hidden;
     }
 }
+
 .screen-fit-size {
     width: 100vw;
     height: 100vh;
+}
+
+@layer utilities {
+    .link {
+        @apply text-blue hover:underline cursor-pointer flex items-center;
+    }
 }
