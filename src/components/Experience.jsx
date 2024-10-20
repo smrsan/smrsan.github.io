@@ -5,6 +5,7 @@ const Experience = ({
     name,
     logoUrl,
     corpTitle,
+    datesOfEmployment,
     corpLinkTitle,
     corpLinkUrl,
     jobTitle,
@@ -12,26 +13,93 @@ const Experience = ({
     description,
 }) => {
     useGSAP(() => {
-        gsap.to(`#${name}-experience-container`, {
-            translateX: 0,
-            opacity: 1,
-            scrollTrigger: {
-                trigger: `#${name}-experience-spacer`,
-                start: "-5% center",
-                end: "5% center",
-                scrub: true,
-            },
+        makeGsapFadeInAnimation({
+            elem: `#${name}-experience-container`,
+            start: "-5% center",
+            end: "5% center",
         });
 
-        gsap.to(`#${name}-experience-logo`, {
-            opacity: 1,
-            scrollTrigger: {
-                trigger: `#${name}-experience-spacer`,
-                start: "5% center",
-                end: "10% center",
-                scrub: true,
-            },
+        makeGsapFadeInAnimation({
+            elem: `#${name}-experience-logo`,
+            start: "5% center",
+            end: "10% center",
         });
+
+        makeGsapFadeInAnimation({
+            elem: gsap.utils.toArray(
+                document.querySelectorAll(
+                    `#${name}-experience-corpTitle > span`
+                )
+            ),
+            start: "5% center",
+            end: "10% center",
+            stagger: true,
+            fromY: -25,
+        });
+
+        makeGsapFadeInAnimation({
+            elem: `#${name}-date-of-employment`,
+            start: "10% center",
+            end: "15% center",
+            fromY: -25,
+        });
+
+        makeGsapFadeInAnimation({
+            elem: `#${name}-corp-link`,
+            start: "15% center",
+            end: "20% center",
+            fromY: -25,
+        });
+
+        makeGsapFadeInAnimation({
+            elem: `#${name}-experience-description`,
+            start: "25% center",
+            end: "30% center",
+        });
+
+        function makeGsapFadeInAnimation({
+            elem,
+            start,
+            end,
+            stagger = false,
+            fromX = 0,
+            fromY = 0,
+            from = {},
+            to = {},
+        }) {
+            gsap.fromTo(
+                elem,
+                {
+                    opacity: 0,
+                    x: fromX,
+                    y: fromY,
+                    ...from,
+                },
+                {
+                    opacity: 1,
+                    x: 0,
+                    y: 0,
+                    ...to,
+                    scrollTrigger: {
+                        trigger: `#${name}-experience-spacer`,
+                        start,
+                        end,
+                        scrub: true,
+                    },
+                    ...(stagger
+                        ? {
+                              stagger: {
+                                  amount: 1.5,
+                                  axis: "y",
+                                  ease: "circ.inOut",
+                                  from: "center",
+                                  grid: [2, 1],
+                              },
+                          }
+                        : {}),
+                }
+            );
+        }
     }, []);
 
     return (
@@ -53,17 +121,18 @@ const Experience = ({
                     flex-col
                     items-center
                     justify-center
-                    -translate-x-[100px]
                     opacity-0
+                    mx-auto
                 "
             >
                 <div
                     className="
                         flex
                         flex-col
-                        w-10/12
                         border-gray-400
                         rounded-lg
+                        w-[50rem]
+                        max-w-[90vw]
 
                         bg-white/30
                         backdrop-blur-md
@@ -76,9 +145,8 @@ const Experience = ({
                             flex
                             max-sm:flex-col
                             flex-row
-                            py-3
-                            sm:px-2
-                            px-4
+                            p-6
+                            pb-1
                         "
                     >
                         <div
@@ -110,21 +178,39 @@ const Experience = ({
                             "
                         >
                             <h3
-                                className="text-[2rem] text-center"
+                                id={`${name}-experience-corpTitle`}
+                                className="text-center text-[5vw] md:text-[3vw] lg:text-[2.5vw] xl:text-[2vw]"
                                 style={{
                                     lineHeight: "2.5rem",
                                 }}
                             >
-                                {corpTitle}
+                                {corpTitle?.split("").map((c, i) => (
+                                    <span
+                                        key={i}
+                                        className="inline-block"
+                                        dangerouslySetInnerHTML={{
+                                            __html: c === " " ? "&nbsp;" : c,
+                                        }}
+                                    />
+                                ))}
                             </h3>
-                            <a
-                                href={corpLinkUrl}
-                                title={corpLinkTitle}
-                                className="link"
-                                target="_blank"
-                            >
-                                🔗 {corpLinkTitle}
-                            </a>
+                            <div className="flex flex-row justify-start gap-4">
+                                <span
+                                    id={`${name}-date-of-employment`}
+                                    className="opacity-0"
+                                >
+                                    {datesOfEmployment}
+                                </span>
+                                <a
+                                    id={`${name}-corp-link`}
+                                    href={corpLinkUrl}
+                                    title={corpLinkTitle}
+                                    className="link opacity-0"
+                                    target="_blank"
+                                >
+                                    {corpLinkTitle}
+                                </a>
+                            </div>
                             <h4>{jobTitle}</h4>
                             {skillLevel}
                         </div>
@@ -132,9 +218,9 @@ const Experience = ({
                     <div
                         id={`${name}-experience-description`}
                         className="
-                            py-3
-                            sm:px-2
-                            px-4
+                            p-6
+                            pt-2
+                            opacity-0
                         "
                     >
                         {description}

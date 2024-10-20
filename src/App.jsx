@@ -11,6 +11,7 @@ function App() {
                 name="storm-online"
                 logoUrl={stormLogo}
                 corpTitle={"Rayaneshe Abri-E Yekta Shive "}
+                datesOfEmployment={"07/2017 - 03/2018"}
                 corpLinkTitle={"storm-online.ir"}
                 corpLinkUrl={
                     "https://accounting.storm-online.ir/auth/#!/Authentication/Login"
@@ -21,7 +22,7 @@ function App() {
                     <>
                         Served as a Full-stack JavaScript Developer, reporting
                         directly to the CEO.
-                        <ul>
+                        <ul className="list-disc ml-5">
                             <li>
                                 Developed SPA for Accounting User Panel using
                                 Angular.js v1.
