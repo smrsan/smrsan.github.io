@@ -52,9 +52,21 @@ const Experience = ({
         });
 
         makeGsapFadeInAnimation({
-            elem: `#${name}-experience-description`,
+            elem: `#${name}-job-title`,
             start: "50% center",
             end: "60% center",
+        });
+
+        makeGsapFadeInAnimation({
+            elem: `#${name}-skill-level`,
+            start: "60% center",
+            end: "70% center",
+        });
+
+        makeGsapFadeInAnimation({
+            elem: `#${name}-experience-description`,
+            start: "70% center",
+            end: "90% center",
         });
 
         function makeGsapFadeInAnimation({
@@ -212,8 +224,15 @@ const Experience = ({
                                     {corpLinkTitle}
                                 </a>
                             </div>
-                            <h4>{jobTitle}</h4>
-                            {skillLevel}
+                            <h4 id={`${name}-job-title`} className="opacity-0">
+                                {jobTitle}
+                            </h4>
+                            <span
+                                id={`${name}-skill-level`}
+                                className="opacity-0"
+                            >
+                                {skillLevel}
+                            </span>
                         </div>
                     </div>
                     <div
