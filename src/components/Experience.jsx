@@ -15,14 +15,14 @@ const Experience = ({
     useGSAP(() => {
         makeGsapFadeInAnimation({
             elem: `#${name}-experience-container`,
-            start: "-5% center",
-            end: "5% center",
+            start: "0% center",
+            end: "10% center",
         });
 
         makeGsapFadeInAnimation({
             elem: `#${name}-experience-logo`,
-            start: "5% center",
-            end: "10% center",
+            start: "10% center",
+            end: "20% center",
         });
 
         makeGsapFadeInAnimation({
@@ -31,30 +31,30 @@ const Experience = ({
                     `#${name}-experience-corpTitle > span`
                 )
             ),
-            start: "5% center",
-            end: "10% center",
+            start: "20% center",
+            end: "30% center",
             stagger: true,
             fromY: -25,
         });
 
         makeGsapFadeInAnimation({
             elem: `#${name}-date-of-employment`,
-            start: "10% center",
-            end: "15% center",
+            start: "30% center",
+            end: "40% center",
             fromY: -25,
         });
 
         makeGsapFadeInAnimation({
             elem: `#${name}-corp-link`,
-            start: "15% center",
-            end: "20% center",
+            start: "40% center",
+            end: "50% center",
             fromY: -25,
         });
 
         makeGsapFadeInAnimation({
             elem: `#${name}-experience-description`,
-            start: "25% center",
-            end: "30% center",
+            start: "50% center",
+            end: "60% center",
         });
 
         function makeGsapFadeInAnimation({
