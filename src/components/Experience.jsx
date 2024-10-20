@@ -145,7 +145,7 @@ const Experience = ({
                         rounded-lg
                         w-[50rem]
                         max-w-[90vw]
-                        max-h-[99vh]
+                        max-h-[90vh]
                         text-slate-950
 
                         bg-white/30
