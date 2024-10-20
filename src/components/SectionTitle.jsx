@@ -55,10 +55,19 @@ const SectionTitle = ({ id, title }) => {
                 h-[500vh]
             "
         >
-            <h1
-                id={`${id}-title`}
+            <div
                 className="
                     sticky
+                    top-0
+                    block
+                    screen-fit-size
+                    overflow-hidden
+                "
+            >
+                <h1
+                    id={`${id}-title`}
+                    className="
+                    absolute
                     block
                     text-[20vw]
                     italic
@@ -68,12 +77,13 @@ const SectionTitle = ({ id, title }) => {
                     pointer-events-none
                     opacity-0
                 "
-                style={{
-                    top: `calc(50% - 20vw)`,
-                }}
-            >
-                {title}
-            </h1>
+                    style={{
+                        top: `calc(50% - 20vw)`,
+                    }}
+                >
+                    {title}
+                </h1>
+            </div>
         </div>
     );
 };
