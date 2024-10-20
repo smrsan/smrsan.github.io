@@ -21,19 +21,6 @@ const Hero = () => {
                 duration: 0.3,
             });
 
-        // "Welcome" text on Scroll Aniamtion
-        gsap.to("#welcome-container", {
-            x: -200,
-            opacity: 0,
-            ease: "circ.inOut",
-            scrollTrigger: {
-                trigger: "#hero",
-                start: "50% center",
-                end: "120% center",
-                scrub: true,
-            },
-        });
-
         // "Page Name" text on Scroll Aniamtion
         gsap.to("#hero-name", {
             x: 200,
