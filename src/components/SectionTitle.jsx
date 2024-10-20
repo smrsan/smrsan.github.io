@@ -19,8 +19,8 @@ const SectionTitle = ({ id, title }) => {
                     ease: "none",
                     scrollTrigger: {
                         trigger: `#${id}-spacer`,
-                        start: "0% center",
-                        end: "50% center",
+                        start: "0% bottom",
+                        end: "25% center",
                         scrub: true,
                     },
                 }
@@ -38,7 +38,7 @@ const SectionTitle = ({ id, title }) => {
                     ease: "none",
                     scrollTrigger: {
                         trigger: `#${id}-spacer`,
-                        start: "50% center",
+                        start: "25% center",
                         end: "100% center",
                         scrub: true,
                     },
