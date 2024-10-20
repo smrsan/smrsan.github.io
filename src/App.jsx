@@ -57,7 +57,7 @@ function App() {
                 skillLevel={"Junior"}
                 description={
                     <>
-                        Working as a Full-Stack Web Developer, | reported
+                        Working as a Full-Stack Web Developer, I reported
                         directly to the CEO of &apos;Kavosh Sepehr Lotus Ltd’.
                         <ul className="list-disc ml-5">
                             <li>
