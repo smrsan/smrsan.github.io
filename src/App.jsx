@@ -4,6 +4,7 @@ import SectionTitle from "./components/SectionTitle";
 
 import stormLogo from "/logos/storm-online-logo.svg?url";
 import sameteoLogo from "/logos/sameteo-logo.svg?url";
+import intwareLogo from "/logos/intware-logo.png?url";
 
 function App() {
     return (
@@ -83,6 +84,38 @@ function App() {
                                 Worked together with the DB Engineerto enhance
                                 efficiency in accessing and storing Weather
                                 Forecast information.
+                            </li>
+                        </ul>
+                    </>
+                }
+            />
+            <Experience
+                name="intware"
+                logoUrl={intwareLogo}
+                corpTitle={"Asr-E Pardazesh-E Sari’"}
+                datesOfEmployment={"05/2019 - 01/2020"}
+                corpLinkTitle={"intware.ir"}
+                corpLinkUrl={
+                    "https://www.aparat.com/v/1pl4t/%D9%BE%D8%A7%D8%AF%DA%A9%D8%B3%D8%AA_%D9%87%D8%A7%DB%8C_%D8%A2%D9%85%D9%88%D8%B2%D8%B4%DB%8C_%D9%85%D8%AC%D9%84%D8%B3%D8%AA%D8%A7%D9%86?t=%7Bseek_to_second_number%7D"
+                }
+                jobTitle={"Front-end Freelancer"}
+                skillLevel={"Junior"}
+                description={
+                    <>
+                        Directly reporting to the CEO, | served as the head
+                        front-end developer for crowdsourcing project.
+                        <ul className="list-disc ml-5">
+                            <li>
+                                Utilized React.js to build scalable SPA pages
+                                for the organization&apos;s admin panel
+                            </li>
+                            <li>
+                                Designed user interfaces utilizing Material-UI
+                                framework.
+                            </li>
+                            <li>
+                                Integrated SPA and GraphQL API effectively by
+                                employing Apollo.
                             </li>
                         </ul>
                     </>
