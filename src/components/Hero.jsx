@@ -41,8 +41,32 @@ const Hero = () => {
             ease: "circ.inOut",
             scrollTrigger: {
                 trigger: "#hero",
+                start: "50% center",
+                end: "100% center",
+                scrub: true,
+            },
+        });
+
+        gsap.to("#welcome-text", {
+            x: -200,
+            opacity: 0,
+            ease: "circ.inOut",
+            scrollTrigger: {
+                trigger: "#hero",
                 start: "60% center",
-                end: "130% center",
+                end: "110% center",
+                scrub: true,
+            },
+        });
+
+        gsap.to("#animated-page-type", {
+            x: 200,
+            opacity: 0,
+            ease: "circ.inOut",
+            scrollTrigger: {
+                trigger: "#hero",
+                start: "70% center",
+                end: "120% center",
                 scrub: true,
             },
         });
@@ -141,46 +165,32 @@ const Hero = () => {
                 My Name is <u>Reza</u>
             </h1>
 
-            <h3
-                id="welcome-container"
+            <h2
+                id="welcome-text"
                 className="
-                    text-[2rem]
-                    bg-white/30
-                    backdrop-blur-md
-                    border
-                    border-white/30
-                    rounded-full
-                    max-sm:px-4
-                    max-sm:pb-3
-                    max-sm:pt-4
-                    px-7
-                    pb-6
-                    pt-7
-                    overflow-hidden
-                    flex
-                    items-center
-                    gap-5
+                    relative
+                    z-10
+                    text-[3rem]
                 "
-                style={{
-                    transition: "width 0.5s ease, height 0.5s ease !important",
-                }}
             >
-                <span>Welcome to my</span>
-
-                <div className="inline-flex flex-col gap-6 max-sm:gap-3">
-                    <h2
-                        ref={myPageNameRef}
-                        id="my-page-name"
-                        className="text-[4rem] max-sm:text-[2.5rem] opacity-0 font-bold block relative text-color-1"
-                    >
-                        Portfolio
-                    </h2>
-                    <div
-                        id="my-page-name-line"
-                        className="relative block w-full h-1 bg-white rounded-full"
-                    />
-                </div>
-            </h3>
+                Welcome to my
+            </h2>
+            <div
+                id="animated-page-type"
+                className="inline-flex flex-col gap-6 max-sm:gap-3 relative z-10"
+            >
+                <h2
+                    ref={myPageNameRef}
+                    id="my-page-name"
+                    className="text-[4rem] max-sm:text-[2.5rem] opacity-0 font-bold block relative text-color-1"
+                >
+                    Portfolio
+                </h2>
+                <div
+                    id="my-page-name-line"
+                    className="relative block w-full h-1 bg-white rounded-full"
+                />
+            </div>
         </section>
     );
 };
