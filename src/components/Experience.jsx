@@ -133,6 +133,7 @@ const Experience = ({
                         rounded-lg
                         w-[50rem]
                         max-w-[90vw]
+                        max-h-[99vh]
 
                         bg-white/30
                         backdrop-blur-md
@@ -221,6 +222,7 @@ const Experience = ({
                             p-6
                             pt-2
                             opacity-0
+                            overflow-y-auto
                         "
                     >
                         {description}
