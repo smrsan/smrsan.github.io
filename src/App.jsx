@@ -1,5 +1,6 @@
 import Experience from "./components/Experience";
 import Hero from "./components/Hero";
+import SectionTitle from "./components/SectionTitle";
 
 import stormLogo from "/logos/storm-online-logo.svg?url";
 
@@ -7,6 +8,7 @@ function App() {
     return (
         <>
             <Hero />
+            <SectionTitle id="xp-title" title="These Are My Experiences:" />
             <Experience
                 name="storm-online"
                 logoUrl={stormLogo}
