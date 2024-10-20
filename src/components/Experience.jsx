@@ -119,7 +119,7 @@ const Experience = ({
             id={`${name}-experience-spacer`}
             className="
                 w-full
-                h-[500vh]
+                h-[300vh]
                 relative
             "
         >
