@@ -5,6 +5,7 @@ import SectionTitle from "./components/SectionTitle";
 import stormLogo from "/logos/storm-online-logo.svg?url";
 import sameteoLogo from "/logos/sameteo-logo.svg?url";
 import intwareLogo from "/logos/intware-logo.png?url";
+import _3gaamLogo from "/logos/3gaam-logo.svg?url";
 
 function App() {
     return (
@@ -116,6 +117,64 @@ function App() {
                             <li>
                                 Integrated SPA and GraphQL API effectively by
                                 employing Apollo.
+                            </li>
+                        </ul>
+                    </>
+                }
+            />
+            <Experience
+                name="_3gaam"
+                logoUrl={_3gaamLogo}
+                corpTitle={"Barname Pardazan-E Ati Tech"}
+                datesOfEmployment={"04/2020 - 04/2021"}
+                corpLinkTitle={"3gaam.com"}
+                corpLinkUrl={"https://3gaam.com/"}
+                jobTitle={"Front-end Developer & Project Manager"}
+                skillLevel={"Mid-level"}
+                description={
+                    <>
+                        Worked as the Front-End Web Developer & the Front-End PM
+                        reporting directly to the CTO of “Barname Pardazan-e Ati
+                        Tech”.
+                        <ul className="list-disc ml-5">
+                            <li>
+                                Managed the development of a new TypeScript
+                                project using React.js, Relay.js, Material-UI,
+                                and MobX.
+                            </li>
+                            <li>
+                                Leveraged expertise in TypeScript, React-Native,
+                                and Redux to enhance the older front-end
+                                project.
+                            </li>
+                            <li>
+                                Increased project scalability through the
+                                application of Rush.js, Git-Submodules and
+                                multiple Design Patterns.
+                            </li>
+                            <li>
+                                Implemented folder structures for organization
+                                purposes while using Jest testing framework
+                                alongside ESLint code quality checks.
+                            </li>
+                            <li>
+                                Comprehensive documentation was provided for
+                                ease of maintenance.
+                            </li>
+                            <li>
+                                Provided algorithms and structures for managing
+                                services, features, forms, routes, data syncing,
+                                client-side GraphQL mock server, and pagination
+                                with Relay and GraphQL API.
+                            </li>
+                            <li>
+                                Wrote the Source Obfuscator script to prevent
+                                new developers from accessing sensitive source
+                                codes of the project.
+                            </li>
+                            <li>
+                                Installed their Linux OS and configured Logger
+                                Services, such as Rsyslog and LogRotate.
                             </li>
                         </ul>
                     </>
