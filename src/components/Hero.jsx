@@ -1,8 +1,10 @@
 import { useGSAP } from "@gsap/react";
 import "./hero.css";
-import myPhoto from "/photos/IMG_2720.JPG?url";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
+
+import naturePhoto from "/photos/nature.jpg?url";
+import myPhoto from "/photos/IMG_2720-removebg.png?url";
 
 const Hero = () => {
     const myPageNameRef = useRef();
@@ -92,18 +94,23 @@ const Hero = () => {
         <section
             id="hero"
             className="screen-fit-size relative overflow-hidden flex justify-center items-center flex-col gap-8"
+            style={{
+                backgroundImage: `url("${naturePhoto}")`,
+                backgroundClip: "content-box",
+                backgroundSize: "cover",
+            }}
         >
             <img
-                id="hero-img"
                 alt="My Photo"
                 src={myPhoto}
                 className="
-                    max-sm:min-h-full
-                    max-sm:max-w-[200vw]
-                    min-w-full
                     absolute
-                    -z-10
+                    top-[5vh]
                 "
+                style={{
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                }}
             />
             <div
                 id="hero-bg-fader"
@@ -126,7 +133,7 @@ const Hero = () => {
                 "
                 style={{
                     backgroundImage:
-                        "linear-gradient(90deg, #fcff9e 0%, #c67700 100%)",
+                        "linear-gradient(90deg, #CAC6DD 0%, #AC6AFF 100%)",
                     // WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                 }}
@@ -164,7 +171,7 @@ const Hero = () => {
                     <h2
                         ref={myPageNameRef}
                         id="my-page-name"
-                        className="text-[4rem] max-sm:text-[2.5rem] opacity-0 font-bold block relative text-color-2"
+                        className="text-[4rem] max-sm:text-[2.5rem] opacity-0 font-bold block relative text-color-1"
                     >
                         Portfolio
                     </h2>
