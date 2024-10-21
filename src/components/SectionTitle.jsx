@@ -55,6 +55,7 @@ const SectionTitle = ({ id, title }) => {
                 h-[500vh]
             "
         >
+            <div id={id} />
             <div
                 className="
                     sticky
