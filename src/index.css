@@ -36,7 +36,7 @@
 
 @layer utilities {
     .link {
-        @apply text-blue hover:underline cursor-pointer flex items-center;
+        @apply text-color-1 hover:underline cursor-pointer flex items-center;
     }
 }
 
