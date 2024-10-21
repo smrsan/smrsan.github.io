@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { useEffect, useRef } from "react";
 
 import naturePhoto from "/photos/nature.jpg?url";
-import myPhoto from "/photos/IMG_2720-removebg.png?url";
+// import myPhoto from "/photos/IMG_2720-removebg.png?url";
 
 const Hero = () => {
     const myPageNameRef = useRef();
@@ -111,7 +111,7 @@ const Hero = () => {
                 backgroundSize: "cover",
             }}
         >
-            <img
+            {/* <img
                 alt="My Photo"
                 src={myPhoto}
                 className="
@@ -122,7 +122,7 @@ const Hero = () => {
                     left: "50%",
                     transform: "translateX(-50%)",
                 }}
-            />
+            /> */}
             <div
                 id="hero-bg-fader"
                 className="bg-n-8 w-full h-full pointer-events-none absolute opacity-0"
