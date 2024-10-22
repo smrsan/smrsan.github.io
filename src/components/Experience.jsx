@@ -121,6 +121,7 @@ const Experience = ({
                 w-full
                 h-[250vh]
                 relative
+                -z-10
             "
         >
             <div
@@ -135,6 +136,7 @@ const Experience = ({
                     justify-center
                     opacity-0
                     mx-auto
+                    -z-10
                 "
             >
                 <div
