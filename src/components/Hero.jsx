@@ -128,29 +128,57 @@ const Hero = () => {
                 className="bg-n-8 w-full h-full pointer-events-none absolute opacity-0"
             />
 
-            <h1
-                id="hero-name"
-                className="
-                    max-md:text-[10vw]
-                    max-md:h-[15vw]
-                    text-[5rem]
-                    h-[6.5rem]
-                    font-bold
-                    italic
-                    bg-clip-text
-                    fill-transparent
-                    inline-block
-                    content-center
-                "
-                style={{
-                    backgroundImage:
-                        "linear-gradient(90deg, #CAC6DD 0%, #AC6AFF 100%)",
-                    // WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                }}
-            >
-                My Name is <u>Reza</u>
-            </h1>
+            <div className="relative inline-block">
+                {/* Hidden duplicate text for shadow */}
+                <h1
+                    aria-hidden="true"
+                    className="
+                        absolute
+                        top-0
+                        left-0
+                        max-md:text-[10vw]
+                        max-md:h-[15vw]
+                        text-[5rem]
+                        h-[6.5rem]
+                        font-bold
+                        italic
+                        text-black
+                        inline-block
+                        content-center
+                        pointer-events-none
+                        "
+                    style={{
+                        textShadow: "2px 2px 3px rgba(33, 33, 33, 0.65)",
+                    }}
+                >
+                    My Name is Reza
+                </h1>
+
+                {/* Actual gradient text */}
+                <h1
+                    id="hero-name"
+                    className="
+                        max-md:text-[10vw]
+                        max-md:h-[15vw]
+                        text-[5rem]
+                        h-[6.5rem]
+                        font-bold
+                        italic
+                        bg-clip-text
+                        fill-transparent
+                        inline-block
+                        content-center
+                    "
+                    style={{
+                        backgroundImage:
+                            "linear-gradient(90deg, #CAC6DD 0%, #AC6AFF 100%)",
+                        WebkitTextFillColor: "transparent",
+                        WebkitBackgroundClip: "text",
+                    }}
+                >
+                    My Name is Reza
+                </h1>
+            </div>
 
             <h2
                 id="welcome-text"
