@@ -85,18 +85,32 @@ Error generating stack: `+o.message+`
  * Subject to the terms at https://gsap.com/standard-license or for
  * Club GSAP members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
-*/let Cp=typeof window<"u"?kn.useLayoutEffect:kn.useEffect,Pp=t=>t&&!Array.isArray(t)&&typeof t=="object",Xs=[],Cw={},s_=Dt;const Ts=(t,e=Xs)=>{let n=Cw;Pp(t)?(n=t,t=null,e="dependencies"in n?n.dependencies:Xs):Pp(e)&&(n=e,e="dependencies"in n?n.dependencies:Xs),t&&typeof t!="function"&&console.warn("First parameter must be a function or config object");const{scope:r,revertOnUpdate:i}=n,o=kn.useRef(!1),l=kn.useRef(s_.context(()=>{},r)),s=kn.useRef(a=>l.current.add(null,a)),u=e&&e.length&&!i;return Cp(()=>{if(t&&l.current.add(t,r),!u||!o.current)return()=>l.current.revert()},e),u&&Cp(()=>(o.current=!0,()=>l.current.revert()),Xs),{context:l.current,contextSafe:s.current}};Ts.register=t=>{s_=t};Ts.headless=!0;const Pw="/photos/nature.jpg",Ow=()=>{const t=kn.useRef();return Ts(()=>{Dt.timeline({repeat:-1,repeatDelay:4.2}).to("#my-page-name-line",{width:"0%",duration:.5}).to("#my-page-name-line",{width:"100%",duration:.3}),Dt.to("#hero-name",{x:200,opacity:0,ease:"circ.inOut",scrollTrigger:{trigger:"#hero",start:"50% center",end:"100% center",scrub:!0}}),Dt.to("#welcome-text",{x:-200,opacity:0,ease:"circ.inOut",scrollTrigger:{trigger:"#hero",start:"60% center",end:"110% center",scrub:!0}}),Dt.to("#animated-page-type",{x:200,opacity:0,ease:"circ.inOut",scrollTrigger:{trigger:"#hero",start:"70% center",end:"120% center",scrub:!0}}),Dt.to("#hero-bg-fader",{opacity:1,scrollTrigger:{trigger:"#hero",start:"75% center",end:"120% center",scrub:!0}})},[]),kn.useEffect(()=>{const e=["Website","Portfolio","Resume"];let n=-1,r=!0;return function i(){r&&(Dt.to(t.current,{opacity:0,duration:.5,x:"-5%",onComplete:()=>{n=(n+1)%e.length,t.current.textContent=e[n],Dt.to(t.current,{opacity:1,x:"0%",duration:.3,delay:.3})}}),setTimeout(i,5e3))}(),()=>r=!1},[]),M.jsxs("section",{id:"hero",className:"screen-fit-size relative overflow-hidden flex justify-center items-center flex-col gap-8",style:{backgroundImage:`url("${Pw}")`,backgroundClip:"content-box",backgroundSize:"cover"},children:[M.jsx("div",{id:"hero-bg-fader",className:"bg-n-8 w-full h-full pointer-events-none absolute opacity-0"}),M.jsxs("h1",{id:"hero-name",className:`
-                    max-md:text-[10vw]
-                    max-md:h-[15vw]
-                    text-[5rem]
-                    h-[6.5rem]
-                    font-bold
-                    italic
-                    bg-clip-text
-                    fill-transparent
-                    inline-block
-                    content-center
-                `,style:{backgroundImage:"linear-gradient(90deg, #CAC6DD 0%, #AC6AFF 100%)",WebkitTextFillColor:"transparent"},children:["My Name is ",M.jsx("u",{children:"Reza"})]}),M.jsx("h2",{id:"welcome-text",className:`
+*/let Cp=typeof window<"u"?kn.useLayoutEffect:kn.useEffect,Pp=t=>t&&!Array.isArray(t)&&typeof t=="object",Xs=[],Cw={},s_=Dt;const Ts=(t,e=Xs)=>{let n=Cw;Pp(t)?(n=t,t=null,e="dependencies"in n?n.dependencies:Xs):Pp(e)&&(n=e,e="dependencies"in n?n.dependencies:Xs),t&&typeof t!="function"&&console.warn("First parameter must be a function or config object");const{scope:r,revertOnUpdate:i}=n,o=kn.useRef(!1),l=kn.useRef(s_.context(()=>{},r)),s=kn.useRef(a=>l.current.add(null,a)),u=e&&e.length&&!i;return Cp(()=>{if(t&&l.current.add(t,r),!u||!o.current)return()=>l.current.revert()},e),u&&Cp(()=>(o.current=!0,()=>l.current.revert()),Xs),{context:l.current,contextSafe:s.current}};Ts.register=t=>{s_=t};Ts.headless=!0;const Pw="/photos/nature.jpg",Ow=()=>{const t=kn.useRef();return Ts(()=>{Dt.timeline({repeat:-1,repeatDelay:4.2}).to("#my-page-name-line",{width:"0%",duration:.5}).to("#my-page-name-line",{width:"100%",duration:.3}),Dt.to("#hero-name",{x:200,opacity:0,ease:"circ.inOut",scrollTrigger:{trigger:"#hero",start:"50% center",end:"100% center",scrub:!0}}),Dt.to("#welcome-text",{x:-200,opacity:0,ease:"circ.inOut",scrollTrigger:{trigger:"#hero",start:"60% center",end:"110% center",scrub:!0}}),Dt.to("#animated-page-type",{x:200,opacity:0,ease:"circ.inOut",scrollTrigger:{trigger:"#hero",start:"70% center",end:"120% center",scrub:!0}}),Dt.to("#hero-bg-fader",{opacity:1,scrollTrigger:{trigger:"#hero",start:"75% center",end:"120% center",scrub:!0}})},[]),kn.useEffect(()=>{const e=["Website","Portfolio","Resume"];let n=-1,r=!0;return function i(){r&&(Dt.to(t.current,{opacity:0,duration:.5,x:"-5%",onComplete:()=>{n=(n+1)%e.length,t.current.textContent=e[n],Dt.to(t.current,{opacity:1,x:"0%",duration:.3,delay:.3})}}),setTimeout(i,5e3))}(),()=>r=!1},[]),M.jsxs("section",{id:"hero",className:"screen-fit-size relative overflow-hidden flex justify-center items-center flex-col gap-8",style:{backgroundImage:`url("${Pw}")`,backgroundClip:"content-box",backgroundSize:"cover"},children:[M.jsx("div",{id:"hero-bg-fader",className:"bg-n-8 w-full h-full pointer-events-none absolute opacity-0"}),M.jsxs("div",{className:"relative inline-block",children:[M.jsx("h1",{"aria-hidden":"true",className:`
+                        absolute
+                        top-0
+                        left-0
+                        max-md:text-[10vw]
+                        max-md:h-[15vw]
+                        text-[5rem]
+                        h-[6.5rem]
+                        font-bold
+                        italic
+                        text-black
+                        inline-block
+                        content-center
+                        pointer-events-none
+                        `,style:{textShadow:"2px 2px 3px rgba(33, 33, 33, 0.65)"},children:"My Name is Reza"}),M.jsx("h1",{id:"hero-name",className:`
+                        max-md:text-[10vw]
+                        max-md:h-[15vw]
+                        text-[5rem]
+                        h-[6.5rem]
+                        font-bold
+                        italic
+                        bg-clip-text
+                        fill-transparent
+                        inline-block
+                        content-center
+                    `,style:{backgroundImage:"linear-gradient(90deg, #CAC6DD 0%, #AC6AFF 100%)",WebkitTextFillColor:"transparent",WebkitBackgroundClip:"text"},children:"My Name is Reza"})]}),M.jsx("h2",{id:"welcome-text",className:`
                     relative
                     z-10
                     text-[3rem]
@@ -122,8 +136,9 @@ Error generating stack: `+o.message+`
                     opacity-0
                 `,style:{top:"calc(50% - 20vw)"},children:e})})]})),fl=({name:t,logoUrl:e,corpTitle:n,datesOfEmployment:r,corpLinkTitle:i,corpLinkUrl:o,jobTitle:l,skillLevel:s,description:u})=>(Ts(()=>{a({elem:`#${t}-experience-container`,start:"0% center",end:"10% center"}),a({elem:`#${t}-experience-logo`,start:"10% center",end:"20% center"}),a({elem:Dt.utils.toArray(document.querySelectorAll(`#${t}-experience-corpTitle > span`)),start:"20% center",end:"30% center",stagger:!0,fromY:-25}),a({elem:`#${t}-date-of-employment`,start:"30% center",end:"40% center",fromY:-25}),a({elem:`#${t}-corp-link`,start:"40% center",end:"50% center",fromY:-25}),a({elem:`#${t}-job-title`,start:"50% center",end:"60% center"}),a({elem:`#${t}-skill-level`,start:"60% center",end:"70% center"}),a({elem:`#${t}-experience-description`,start:"70% center",end:"90% center"});function a({elem:c,start:h,end:f,stagger:d=!1,fromX:v=0,fromY:m=0,from:x={},to:g={}}){Dt.fromTo(c,{opacity:0,x:v,y:m,...x},{opacity:1,x:0,y:0,...g,scrollTrigger:{trigger:`#${t}-experience-spacer`,start:h,end:f,scrub:!0},...d?{stagger:{amount:1.5,axis:"y",ease:"circ.inOut",from:"center",grid:[2,1]}}:{}})}},[]),M.jsx("div",{id:`${t}-experience-spacer`,className:`
                 w-full
-                h-[300vh]
+                h-[250vh]
                 relative
+                -z-10
             `,children:M.jsx("div",{id:`${t}-experience-container`,className:`
                     sticky
                     top-0
@@ -134,6 +149,7 @@ Error generating stack: `+o.message+`
                     justify-center
                     opacity-0
                     mx-auto
+                    -z-10
                 `,children:M.jsxs("div",{className:`
                         flex
                         flex-col
