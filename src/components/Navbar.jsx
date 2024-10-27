@@ -7,7 +7,7 @@ const Navbar = () => {
                 fixed
                 top-0
                 w-full
-                max-sm:h-10
+                max-sm:h-15
                 sm:h-20
                 z-50
             "
