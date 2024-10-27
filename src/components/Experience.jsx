@@ -16,13 +16,13 @@ const Experience = ({
         makeGsapFadeInAnimation({
             elem: `#${name}-experience-container`,
             start: "0% center",
-            end: "10% center",
+            end: "5% center",
         });
 
         makeGsapFadeInAnimation({
             elem: `#${name}-experience-logo`,
             start: "10% center",
-            end: "20% center",
+            end: "15% center",
         });
 
         makeGsapFadeInAnimation({
@@ -31,42 +31,42 @@ const Experience = ({
                     `#${name}-experience-corpTitle > span`
                 )
             ),
-            start: "20% center",
-            end: "30% center",
+            start: "15% center",
+            end: "20% center",
             stagger: true,
             fromY: -25,
         });
 
         makeGsapFadeInAnimation({
             elem: `#${name}-date-of-employment`,
-            start: "30% center",
-            end: "40% center",
+            start: "20% center",
+            end: "25% center",
             fromY: -25,
         });
 
         makeGsapFadeInAnimation({
             elem: `#${name}-corp-link`,
-            start: "40% center",
-            end: "50% center",
+            start: "25% center",
+            end: "30% center",
             fromY: -25,
         });
 
         makeGsapFadeInAnimation({
             elem: `#${name}-job-title`,
-            start: "50% center",
-            end: "60% center",
+            start: "30% center",
+            end: "35% center",
         });
 
         makeGsapFadeInAnimation({
             elem: `#${name}-skill-level`,
-            start: "60% center",
-            end: "70% center",
+            start: "35% center",
+            end: "40% center",
         });
 
         makeGsapFadeInAnimation({
             elem: `#${name}-experience-description`,
-            start: "80% bottom",
-            end: "90% bottom",
+            start: "40% center",
+            end: "45% center",
         });
 
         function makeGsapFadeInAnimation({
@@ -119,14 +119,13 @@ const Experience = ({
             id={`${name}-experience-spacer`}
             className="
                 w-full
-                h-[250vh]
                 relative
             "
         >
             <div
                 id={`${name}-experience-container`}
                 className="
-                    sticky
+                    relative
                     top-0
                     screen-fit-size
                     flex
