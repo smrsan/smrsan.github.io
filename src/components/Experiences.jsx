@@ -10,7 +10,6 @@ import joulaLogo from "/logos/joula-logo.png?url";
 
 const Experiences = () => {
     const [viewingXp, setViewingXp] = useState(null);
-    const [focusedXp, setFocusedXp] = useState(null);
 
     const scrollToSection = useCallback(
         (xp) => () => {
@@ -20,37 +19,6 @@ const Experiences = () => {
                     behavior: "smooth",
                     block: "end",
                 });
-        },
-        []
-    );
-
-    const toggleXpFocus = useCallback(
-        (xp) => () => {
-            setFocusedXp((focused) => {
-                const xpBox = document.querySelector(
-                    `#${xp.name}-experience-box`
-                );
-                if (!focused) {
-                    document.body.style.overflow = "hidden";
-
-                    if (xpBox.requestFullscreen) {
-                        xpBox.requestFullscreen();
-                    } else if (xpBox.webkitRequestFullscreen) {
-                        xpBox.webkitRequestFullscreen();
-                    } else if (xpBox.msRequestFullscreen) {
-                        xpBox.msRequestFullscreen();
-                    }
-
-                    return xp.name;
-                }
-
-                document.body.style.overflow = "";
-
-                if (document.fullscreenElement) {
-                    document.exitFullscreen();
-                }
-                return null;
-            });
         },
         []
     );
@@ -93,10 +61,10 @@ const Experiences = () => {
     return (
         <div className="width-full">
             <div
-                className={`
+                className="
                     w-full
-                    ${focusedXp == null ? "z-20" : ""}
-                `}
+                        z-20
+                "
                 style={{
                     position: "sticky",
                     top: "50%",
@@ -194,12 +162,7 @@ const Experiences = () => {
             </div>
             <BgTrainVideo />
             {xpArr.map((xp) => (
-                <Experience
-                    key={xp.name}
-                    {...xp}
-                    focused={xp.name === focusedXp}
-                    toggleFocus={toggleXpFocus(xp)}
-                />
+                <Experience key={xp.name} {...xp} />
             ))}
         </div>
     );
@@ -339,26 +302,6 @@ const xpArr = [
                         Increased project scalability through the application of
                         Rush.js, Git-Submodules and multiple Design Patterns.
                     </li>
-                </ul>
-            </>
-        ),
-        moreDescription: (
-            <>
-                Worked as the Front-End Web Developer & the Front-End PM
-                reporting directly to the CTO of “Barname Pardazan-e Ati Tech”.
-                <ul className="list-disc ml-5">
-                    <li>
-                        Managed the development of a new TypeScript project
-                        using React.js, Relay.js, Material-UI, and MobX.
-                    </li>
-                    <li>
-                        Leveraged expertise in TypeScript, React-Native, and
-                        Redux to enhance the older front-end project.
-                    </li>
-                    <li>
-                        Increased project scalability through the application of
-                        Rush.js, Git-Submodules and multiple Design Patterns.
-                    </li>
                     <li>
                         Implemented folder structures for organization purposes
                         while using Jest testing framework alongside ESLint code
@@ -397,27 +340,6 @@ const xpArr = [
         jobTitle: "Front-end Developer",
         skillLevel: "Senior",
         description: (
-            <>
-                Reporting directly to the CTO of &apos;Bamdad Ide va Fanavari-e
-                Araz’, I have been working as the Front-End React Developer.
-                <ul className="list-disc ml-5">
-                    <li>
-                        Developed the Front-end of KnitNet Monitoring Solution
-                        Panel utilizing React.js.
-                    </li>
-                    <li>
-                        Executed design tasks using the cutting-edge MUI
-                        framework.
-                    </li>
-                    <li>
-                        Implemented an optimized solution for globally managing
-                        dialogs by leveraging React context and URL query
-                        parameters.
-                    </li>
-                </ul>
-            </>
-        ),
-        moreDescription: (
             <>
                 Reporting directly to the CTO of &apos;Bamdad Ide va Fanavari-e
                 Araz’, I have been working as the Front-End React Developer.

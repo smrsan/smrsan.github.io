@@ -11,9 +11,6 @@ const Experience = ({
     jobTitle,
     skillLevel,
     description,
-    moreDescription,
-    focused,
-    toggleFocus,
 }) => {
     useGSAP(() => {
         makeGsapFadeInAnimation({
@@ -95,18 +92,12 @@ const Experience = ({
                     x: 0,
                     y: 0,
                     ...to,
-                    ...(focused
-                        ? {
-                              duration: 1,
-                          }
-                        : {
-                              scrollTrigger: {
-                                  trigger: `#${name}-experience-spacer`,
-                                  start,
-                                  end,
-                                  scrub: true,
-                              },
-                          }),
+                    scrollTrigger: {
+                        trigger: `#${name}-experience-spacer`,
+                        start,
+                        end,
+                        scrub: true,
+                    },
                     ...(stagger
                         ? {
                               stagger: {
@@ -121,7 +112,7 @@ const Experience = ({
                 }
             );
         }
-    }, [focused]);
+    }, []);
 
     return (
         <div
@@ -134,10 +125,9 @@ const Experience = ({
         >
             <div
                 id={`${name}-experience-container`}
-                className={`
-                    ${focused ? "fixed" : "sticky"}
+                className="
+                    sticky
                     top-0
-                    ${focused ? "left-0" : ""}
                     screen-fit-size
                     flex
                     flex-col
@@ -145,72 +135,25 @@ const Experience = ({
                     justify-center
                     opacity-0
                     mx-auto
-                `}
+                "
             >
                 <div
-                    id={`${name}-experience-box`}
-                    className={`
+                    className="
                         flex
                         flex-col
                         border-gray-400
-                        ${focused ? "" : "rounded-lg"}
-                        ${
-                            focused
-                                ? `
-                                    w-[100vw]
-                                    min-h-[100vh]
-                                    sm:pt-[3rem]
-                                    pt-[2rem]
-                                    md:px-[7.5vw]
-                                    lg:px-[10vw]
-                                    xl:px-[15vw]
-
-                                    bg-white
-                                `
-                                : `
-                                    w-[50rem]
-                                    max-w-[90vw]
-                                    max-h-[90vh]
-                                    
-                                    bg-white/30
-                                    backdrop-blur-md
-                                    border
-                                    border-white/30
-                                `
-                        }
+                        rounded-lg
+                        w-[50rem]
+                        max-w-[90vw]
+                        max-h-[90vh]
                         text-slate-950
-                        transition-all
-                    `}
+
+                        bg-white/30
+                        backdrop-blur-md
+                        border
+                        border-white/30
+                    "
                 >
-                    <div
-                        onClick={toggleFocus}
-                        className={`
-                            ${focused ? "block" : "hidden"}
-                            absolute
-                            top-[5rem]
-                            right-[2vw]
-                            sm:right-[5vw]
-                            md:right-[7.5vw]
-                            lg:right-[10vw]
-                            xl:right-[15vw]
-                            rounded-full
-                            w-10
-                            aspect-square
-                            bg-white
-                            opacity-50
-                            hover:opacity-100
-                            cursor-pointer
-                            flex
-                            content-center
-                            items-center
-                            justify-center
-                            font-extrabold
-                            text-2xl
-                            z-10
-                        `}
-                    >
-                        X
-                    </div>
                     <div
                         className="
                             flex
@@ -255,15 +198,10 @@ const Experience = ({
                                     lineHeight: "2.5rem",
                                 }}
                             >
-                                <span className={focused ? "inline" : "hidden"}>
-                                    {corpTitle}
-                                </span>
                                 {corpTitle?.split("").map((c, i) => (
                                     <span
                                         key={i}
-                                        className={
-                                            focused ? "hidden" : "inline-block"
-                                        }
+                                        className="inline-block"
                                         dangerouslySetInnerHTML={{
                                             __html: c === " " ? "&nbsp;" : c,
                                         }}
@@ -307,12 +245,7 @@ const Experience = ({
                             overflow-y-auto
                         "
                     >
-                        {focused ? moreDescription : description}
-                        {!focused && !!moreDescription && (
-                            <a className="link" onClick={toggleFocus}>
-                                &gt; Read More...
-                            </a>
-                        )}
+                        {description}
                     </div>
                 </div>
             </div>
