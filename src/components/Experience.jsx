@@ -65,8 +65,8 @@ const Experience = ({
 
         makeGsapFadeInAnimation({
             elem: `#${name}-experience-description`,
-            start: "70% center",
-            end: "90% center",
+            start: "80% bottom",
+            end: "90% bottom",
         });
 
         function makeGsapFadeInAnimation({
