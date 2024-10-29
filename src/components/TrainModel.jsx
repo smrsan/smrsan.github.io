@@ -31,7 +31,7 @@ export function TrainModel({ scrollProgressRef, ...props }) {
 
     useEffect(() => {
         Object.values(actions).forEach((act) => {
-            act.reset();
+            // act.reset();
             act.play();
         });
     }, [actions]);
