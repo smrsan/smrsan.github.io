@@ -147,7 +147,7 @@ const Experience = ({
                         max-h-[90vh]
                         text-slate-950
 
-                        bg-white/30
+                        bg-white/50
                         backdrop-blur-md
                         border
                         border-white/30
