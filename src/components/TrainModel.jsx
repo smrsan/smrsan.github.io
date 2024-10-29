@@ -24,14 +24,12 @@ export function TrainModel({ scrollProgressRef, ...props }) {
                     originalMaterial.emissive || new THREE.Color(0x000000), // Set a default color if undefined
                 emissiveMap: originalMaterial.emissiveMap || null,
                 emissiveIntensity: originalMaterial.emissiveIntensity || 1,
-                // gradientMap: new THREE.TextureLoader().load("/textures/gradient.png"),
             });
         });
     }, [materials]);
 
     useEffect(() => {
         Object.values(actions).forEach((act) => {
-            // act.reset();
             act.play();
         });
     }, [actions]);
