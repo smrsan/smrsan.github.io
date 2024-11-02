@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { xpArr } from "../constants";
 import Experience from "./Experience";
 // import BgTrainVideo from "./BgTrainVideo";
-import BgTrainModel from "./BgTrainModel";
+import BgTrainModel from "./models/BgTrainModel";
 import XpNavigator from "./XpNavigator";
 
 const Experiences = () => {
