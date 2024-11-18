@@ -1,21 +1,7 @@
-import { usePlane } from "@react-three/cannon";
-import * as THREE from "three";
+import { CuboidCollider } from "@react-three/rapier";
 
-const GroundModel = (props) => {
-    const [groundRef] = usePlane(() => ({
-        rotation: [Math.PI / -2, 0, 0],
-        position: [0, 0, 0],
-        ...props,
-    }));
-
-    return (
-        <mesh
-            ref={groundRef}
-            receiveShadow
-            material={new THREE.MeshStandardMaterial({ color: 0x252134 })}
-            geometry={new THREE.PlaneGeometry(20, 20)}
-        />
-    );
+const GroundModel = () => {
+    return <CuboidCollider position={[0, -2.5, 0]} args={[1000, 1, 1000]} />;
 };
 
 export default GroundModel;
