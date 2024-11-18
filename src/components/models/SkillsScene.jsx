@@ -68,3 +68,11 @@ const SkillsScene = ({ runAnimation = false }) => {
 };
 
 export default SkillsScene;
+
+useGLTF.preload(`${techModelsPathPrefix}/css.glb`);
+useGLTF.preload(`${techModelsPathPrefix}/deno.glb`);
+useGLTF.preload(`${techModelsPathPrefix}/HTML.glb`);
+useGLTF.preload(`${techModelsPathPrefix}/js.glb`);
+useGLTF.preload(`${techModelsPathPrefix}/node.glb`);
+useGLTF.preload(`${techModelsPathPrefix}/react.glb`);
+useGLTF.preload(`${techModelsPathPrefix}/ts.glb`);
